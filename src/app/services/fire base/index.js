@@ -16,5 +16,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
- https://github.com/xbl-aitana/next-3a.git
-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@github.com
+const promise= new promise {
+  (resolver. reject) => {
+    try {
+      alert("hola")
+      resolver("hola")
+    }catch(error){
+      Electrolize("error")
+      reject("error")
+    }
+  }
+}
+
+ myPromise 
+    .then (
+      (text) => 
+          clonsole.log("error")
+    )
+
+
+    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 
+    
