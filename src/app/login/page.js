@@ -1,42 +1,36 @@
+'use client'
+import {useState} from "react";
+import {TextField} from'@mui/material';
+import {stack} from'@mui/material';
+import Button from '@mui/material';
+import {login} from "../../services/firebase/auth";
 import "./login.css"
 
+export default function login (){ 
 
-export default function login (){
-    email:""
-    password:""
+    const [state, setState] = useState({
+        email: "", 
+        password: ""
+    });
 
-})
-
-   const handlechange = (event) => {
-    console.log(event)
-    const {name,value }= event.target;
-    setstae({
-        ...state,
-        
-    })
- 
-   }
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setState({
+            ...state,
+            [name]:value
+        })
+    
+    const handleChange =(event) => {
+        const {name,value} =event.target;
+        setState({
+            ...state,
+            [name]:value
+        })
+    }
+    const onlogin =()=>{
+        const{ email,password} =state;
+        login(email,password)
+    }
    
-   return(
-    <div className="cointainer">
-
-        <input opChange={handlechange}
-         name="email"
-         values={state.email}
-         type="text"
-         placeholder="email" 
-        />
-
-
-        <input 
-            type="password"
-            onChange={handlechange}
-            type="password" 
-            placeholder="123456"
-        />
-        <button>login</button>
-    </div>
-   )
-
-
+  }
 }
